@@ -1,0 +1,16 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Development
+.vscode/
+.idea/
+*.swp
+
+# Build
+dist/
+
+# Cookies
+skinportCookies.json
+steamCookies.json
