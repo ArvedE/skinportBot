@@ -1,0 +1,10 @@
+{
+  "name": "skinportbot",
+  "displayName": "skinportbot",
+  "description": "A bot that buys skins from Skinport that have a discount",
+  "version": "0.0.1",
+  "author": "ArvedE",
+  "dependencies": {
+    "puppeteer": "^19.11.1"
+  }
+}

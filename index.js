@@ -3,7 +3,7 @@ const fs = require('fs/promises');
 
 const chromePath = 'C:/Program Files/Google/Chrome/Application/chrome.exe'; // Pfad zu Chrome
 const timeForLogin = 20000; // Zeit in Millisekunden, die für den Login benötigt wird
-const minDiscount = 25; // Mindestrabatt, den das gefundene Produkt haben muss
+const minDiscount = 30; // Mindestrabatt, den das gefundene Produkt haben muss
 const minPrice = 100; // Mindestpreis, den das gefundene Produkt haben muss
 
 (async () => {
@@ -131,6 +131,10 @@ async function checkout(page) {
 
     // Sofort-Zahlungsmethode auswählen
     try {
+
+        await page.waitForSelector('.adyen-checkout__payment-method__header', { visible: true });
+        await page.click('.adyen-checkout__payment-method__header');
+
         await page.waitForSelector('.adyen-checkout__button', { visible: true });
         await page.click('.adyen-checkout__button');
     } catch (error) {
